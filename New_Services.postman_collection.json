@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "ec665d22-2071-48a9-9c0e-0f5451a46f2d",
+		"name": "New_Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get_Internal_Letter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "{{auth_Token}}"
+					},
+					{
+						"key": "content-type",
+						"type": "text",
+						"value": "application/json;charset=utf-8;"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"operationCode\":\"037\",\r\n   \"attributes\":{  \r\n      \"correspondenceId\":\"11784\"\r\n      }\r\n}"
+				},
+				"url": {
+					"raw": "http://{{Server_Address}}/muras/mobileServlet",
+					"protocol": "http",
+					"host": [
+						"{{Server_Address}}"
+					],
+					"path": [
+						"muras",
+						"mobileServlet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_User_Mark",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "{{auth_Token}}"
+					},
+					{
+						"key": "content-type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\n\t\t\"operationCode\":\"036\",\n\t\t\"attributes\":{\n\t\n\t\t}\n\t}"
+				},
+				"url": {
+					"raw": "http://{{Server_Address}}/muras/mobileServlet",
+					"protocol": "http",
+					"host": [
+						"{{Server_Address}}"
+					],
+					"path": [
+						"muras",
+						"mobileServlet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload_Mark",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "{{auth_Token}}"
+					},
+					{
+						"key": "enctype",
+						"type": "text",
+						"value": "multipart/form-data"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"value": null,
+							"type": "file"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{Server_Address}}/muras/mobileMarkUpload",
+					"protocol": "http",
+					"host": [
+						"{{Server_Address}}"
+					],
+					"path": [
+						"muras",
+						"mobileMarkUpload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"operationCode\":\"001\",\n\t\"attributes\":\n\t{\n\t\t\"username\":\"YWhheWVr\",\n\t\t\"password\": \"MTIz\",\n\t\t\"fingerprintToken\": \"null\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://{{Server_Address}}/muras/mobileServlet",
+					"protocol": "http",
+					"host": [
+						"{{Server_Address}}"
+					],
+					"path": [
+						"muras",
+						"mobileServlet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remark_Correspondence",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "{{auth_Token}}"
+					},
+					{
+						"key": "content-type",
+						"type": "text",
+						"value": "application/json;charset=utf-8;"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"operationCode\":\"039\",\r\n   \"attributes\":{  \r\n      \"correspId\":11784,\r\n      \"hasExternal\":true,\r\n      \"hasInternal\":true\r\n      }\r\n}"
+				},
+				"url": {
+					"raw": "http://{{Server_Address}}/muras/mobileServlet",
+					"protocol": "http",
+					"host": [
+						"{{Server_Address}}"
+					],
+					"path": [
+						"muras",
+						"mobileServlet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove_Remark_Internal_Letter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "{{auth_Token}}"
+					},
+					{
+						"key": "content-type",
+						"type": "text",
+						"value": "application/json;charset=utf-8;"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"operationCode\":\"040\",\r\n   \"attributes\":{  \r\n      \"correspId\":11783\r\n      }\r\n}"
+				},
+				"url": {
+					"raw": "http://{{Server_Address}}/muras/mobileServlet",
+					"protocol": "http",
+					"host": [
+						"{{Server_Address}}"
+					],
+					"path": [
+						"muras",
+						"mobileServlet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove_Remark_Outgoing_Letter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "{{auth_Token}}"
+					},
+					{
+						"key": "content-type",
+						"type": "text",
+						"value": "application/json;charset=utf-8;"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"operationCode\":\"041\",\r\n   \"attributes\":{  \r\n      \"correspId\":11783\r\n      }\r\n}"
+				},
+				"url": {
+					"raw": "http://{{Server_Address}}/muras/mobileServlet",
+					"protocol": "http",
+					"host": [
+						"{{Server_Address}}"
+					],
+					"path": [
+						"muras",
+						"mobileServlet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Open_Correspondence",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json;charset=utf-8;"
+					},
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "{{auth_Token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"operationCode\":\"005\",\r\n   \"attributes\":{  \r\n      \"correspId\":\"11784\",\r\n      \"histDtlsId\":\"3000\"\r\n   }\r\n}"
+				},
+				"url": {
+					"raw": "http://{{Server_Address}}/muras/mobileServlet",
+					"protocol": "http",
+					"host": [
+						"{{Server_Address}}"
+					],
+					"path": [
+						"muras",
+						"mobileServlet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search_For_Correspondence",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "{{auth_Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"operationCode\":\"011\",\r\n   \"attributes\":{  \r\n      \"correspNumber\":11735,\r\n      \"from\":\"01/01/2019\",\r\n      \"to\":\"23/07/2019\",\r\n      \"subject\":\"\",\r\n      \"isBarCode\":\"\",\r\n      \"pageNumber\":2\r\n   }\r\n}"
+				},
+				"url": {
+					"raw": "http://{{Server_Address}}/muras/mobileServlet",
+					"protocol": "http",
+					"host": [
+						"{{Server_Address}}"
+					],
+					"path": [
+						"muras",
+						"mobileServlet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign_Correspondence",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "{{auth_Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"operationCode\":\"32\",\n\t\"attributes\":{\n\t\t\"correspId\":11783,\n\t\t\"histDtlsId\":13618,\n\t\t\"hasExternal\":true,\n\t\t\"hasInternal\":true\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://{{Server_Address}}/muras/mobileServlet",
+					"protocol": "http",
+					"host": [
+						"{{Server_Address}}"
+					],
+					"path": [
+						"muras",
+						"mobileServlet"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
